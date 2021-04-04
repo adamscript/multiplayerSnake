@@ -1,9 +1,33 @@
 const BG_COLOUR = '231f20';
 const SNAKE_COLOUR = '#C2C2C2';
 const FOOD_COLOUR = 'E66916'
+
 const gameScreen = document.getElementById('gameScreen');
 
 let canvas, ctx;
+
+const gameState = {
+    player: {
+        pos: {
+            x: 3,
+            y: 10,
+        },
+        vel: {
+            x: 1,
+            y: 0,
+        },
+        snake: [
+            {x: 1, y: 10},
+            {x: 2, y: 10},
+            {x: 3, y: 10},
+        ],
+    },
+    food: {
+        x: 7,
+        y: 7,
+    },
+    gridsize: 20,
+};
 
 function init(){
     canvas = document.getElementById('canvas');
@@ -40,8 +64,10 @@ function paintGame(state){
 function paintPlayer(playerState, size, colour){
     const snake = playerState.snake;
 
-    ctx.fillStyle colour;
+    ctx.fillStyle = colour;
     for (let cell of snake){
         ctx.fillRect(cell.x * size, cell.y * size, size, size);
     }
 }
+
+paintGame(gameState);
