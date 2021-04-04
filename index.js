@@ -1,6 +1,6 @@
-const BG_COLOUR = '231f20';
+const BG_COLOUR = '#231F20';
 const SNAKE_COLOUR = '#C2C2C2';
-const FOOD_COLOUR = 'E66916'
+const FOOD_COLOUR = '#E66916'
 
 const gameScreen = document.getElementById('gameScreen');
 
